@@ -15,5 +15,12 @@ class CommentService {
       console.error(error)
     }
   }
+  // async createComment(commentData) {
+  //   try {
+  //     await api.post('', commentData)
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 }
 export const commentService = new CommentService()
