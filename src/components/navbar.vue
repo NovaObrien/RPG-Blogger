@@ -1,9 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
-      <div class="d-flex flex-column align-items-center">
-      </div>
-      <div class="text-danger text-shadow">
+      <div class="d-flex flex-column align-items-center"></div>
+      <div class="text-danger text-shadow" id="logo">
         <h3>RPG Blogger</h3>
       </div>
     </router-link>
@@ -22,7 +21,12 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <router-link :to="{ name: 'Home' }" class="nav-link">
-            Home
+            <i class="fas fa-dungeon"></i> Home
+          </router-link>
+        </li>
+        <li class="nav-item">
+          <router-link :to="{ name: 'Profile' }" class="nav-link">
+            <i class="fas fa-dungeon"></i> Profile
           </router-link>
         </li>
       </ul>
@@ -110,5 +114,8 @@ export default {
 }
 a:hover {
   text-decoration: none;
+}
+#logo {
+  font-family: "Press Start 2P", cursive;
 }
 </style>

@@ -10,5 +10,22 @@ class BlogService {
       console.error(error)
     }
   }
+
+  async createBlogs(blogData) {
+    try {
+      await api.post('/blogs', blogData)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  async getActiveBlog(blogId) {
+    try {
+      const res = await api.get('/blogs/' + blogId)
+      AppState.activeBlog = res.data
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
 export const blogService = new BlogService()

@@ -3,21 +3,27 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../pages/Home.vue'
 // @ts-ignore
 import Profile from '../pages/Profile.vue'
+// @ts-ignore
+import ActiveBlog from '../pages/ActiveBlog.vue'
 import { Auth0Provider } from '@bcwdev/auth0provider-client'
 
 const routes = [
   {
-    path: '/',
+    path: '/blog',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/blog/:blogId',
+    name: 'ActiveBlog',
+    component: ActiveBlog
   },
   {
     path: '/profile',
     name: 'Profile',
     component: Profile,
     beforeEnter: Auth0Provider.authGuard
-  }
-]
+  }]
 
 const router = createRouter({
   linkActiveClass: 'router-link-active',
