@@ -1,5 +1,5 @@
 <template>
-  <div class="create-blog">
+  <div class="edit-blog">
     <!-- Button trigger modal -->
     <button
       type="button"
@@ -7,7 +7,7 @@
       data-toggle="modal"
       data-target="#exampleModalLong"
     >
-      Reply
+      Edit
       <i class="fas fa-scroll"></i>
     </button>
 
@@ -22,10 +22,10 @@
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form class="form-group" @submit.prevent="createComment">
+          <form class="form-group" @submit.prevent="editPost">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">
-                Create a Comment...
+                edit a Post...
               </h5>
               <button
                 type="button"
@@ -38,6 +38,15 @@
             </div>
             <div class="modal-body">
               <!-- <label for=""></label> -->
+              <input
+                type="text"
+                class="form-control"
+                name=""
+                id=""
+                aria-describedby="titleId"
+                placeholder="Title..."
+                v-model="state.newBlog.title"
+              />
               <textarea
                 class="form-control rounded-0 mt-3"
                 rows="15"
@@ -45,7 +54,7 @@
                 id=""
                 aria-describedby="Body"
                 placeholder="Content goes here..."
-                v-model="state.newComment.body"
+                v-model="state.newBlog.body"
               />
             </div>
             <div class="modal-footer">
@@ -56,7 +65,7 @@
               >
                 Close
               </button>
-              <button type="submit" class="btn btn-primary">Comment</button>
+              <button type="submit" class="btn btn-primary">Edit Post</button>
             </div>
           </form>
         </div>
@@ -78,8 +87,8 @@ export default {
     })
     return {
       state,
-      comments: computed(() => AppState.activeBlogComments),
-      createComment() {
+      blog: computed(() => AppState.activeBlog),
+      editBlog() {
         commentService.createComment(state.newComment)
       }
     }

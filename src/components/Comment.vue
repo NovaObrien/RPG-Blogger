@@ -1,7 +1,7 @@
 <template>
   <div class="Comment">
     <h5>{{ comment.body }}</h5>
-    <h5>{{ comment.blog }}</h5>
+    <!-- <h5>{{ comment.blog }}</h5> -->
     <h5>{{ comment.creatorEmail }}</h5>
   </div>
 </template>

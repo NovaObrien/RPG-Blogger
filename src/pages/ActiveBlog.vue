@@ -2,6 +2,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-1" id="border">
+        <CreateBlog class="mt-5" />
+        <!-- <EditBlog class="mt-5" /> -->
         <CreateComment class="mt-5" />
       </div>
       <div class="col-7 overflow-auto" id="post">
@@ -15,13 +17,12 @@
           <!-- <h3>{{ blog.published }}</h3> -->
           <h6>By: {{ blog.creatorEmail }}</h6>
         </div>
-        <div>
-          <Comment
-            v-for="comment in activeBlogComments"
-            :comment-props="comment"
-            :key="comment.id"
-          />
-        </div>
+
+        <Comment
+          v-for="comment in comments"
+          :comment-props="comment"
+          :key="comment.id"
+        />
       </div>
       <div class="col" id="border"></div>
     </div>
@@ -39,10 +40,12 @@ import { AppState } from '../AppState'
 import { useRoute } from 'vue-router'
 import Comment from '../components/Comment'
 import CreateComment from '../components/CreateComment'
+import CreateBlog from '../components/CreateBlog'
+// import EditBlog from '../components/EditBlog'
 
 export default {
   name: 'ActiveBlog',
-  components: { Comment, CreateComment },
+  components: { Comment, CreateComment, CreateBlog },
   setup() {
     const route = useRoute()
     onMounted(() => {
@@ -50,8 +53,9 @@ export default {
       commentService.getComments(route.params.blogId)
     })
     return {
-      blog: computed(() => AppState.activeBlog)
-      // removeCar() {
+      blog: computed(() => AppState.activeBlog),
+      comments: computed(() => AppState.activeBlogComments)
+      // removeBlog() {
       //   blogService.removeCar(route.params.blogId)
       // }
     }

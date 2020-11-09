@@ -2,14 +2,12 @@
   <div class="Blog p-3">
     <h3 @click="setActiveBlog">{{ blog.title }}</h3>
     <h5>User: {{ blog.creatorEmail }}</h5>
-    <!-- <button class="btn btn-dark" @click="">Edit</button> -->
   </div>
 </template>
 
 <script>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { blogService } from '../services/BlogService'
 
 export default {
   name: 'Blog',
@@ -22,7 +20,6 @@ export default {
       blog: computed(() => props.blogProps),
       setActiveBlog() {
         router.push({ name: 'ActiveBlog', params: { blogId: props.blogProps._id } })
-        blogService.getActiveBlog(props.blogProps)
       }
     }
   },
