@@ -6,7 +6,7 @@
       </div>
       <div class="col-7 overflow-auto" id="post">
         <div
-          class="activeBlog d-flex flex-column align-items-center bg-light"
+          class="activeBlog d-flex flex-column align-items-center"
           v-if="blog.title"
         >
           <h2>{{ blog.title }}</h2>
@@ -47,7 +47,7 @@ export default {
     const route = useRoute()
     onMounted(() => {
       blogService.getActiveBlog(route.params.blogId)
-      commentService.getComments()
+      commentService.getComments(route.params.blogId)
     })
     return {
       blog: computed(() => AppState.activeBlog)

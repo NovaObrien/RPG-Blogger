@@ -1,16 +1,12 @@
 import { AppState } from '../AppState'
 import { api } from './AxiosService'
 
-let url = '/blogs/'
-let blogId = ''
 class CommentService {
-  async getComments() {
-    blogId = AppState.activeBlogId
-    url += blogId + '/comments'
-    console.log(url)
+  async getComments(blogId) {
+    console.log(blogId)
     try {
-      const resComment = await api.get(url += String(blogId) + '/comments')
-      AppState.activeBlogComments = resComment.data
+      const res = await api.get('/blog/' + blogId + '/comments')
+      AppState.activeBlogComments = res.data.map(c => new Comment(c))
     } catch (error) {
       console.error(error)
     }

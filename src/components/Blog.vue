@@ -2,6 +2,7 @@
   <div class="Blog p-3">
     <h3 @click="setActiveBlog">{{ blog.title }}</h3>
     <h5>User: {{ blog.creatorEmail }}</h5>
+    <!-- <button class="btn btn-dark" @click="">Edit</button> -->
   </div>
 </template>
 
