@@ -20,6 +20,7 @@ class BlogService {
   }
 
   async getActiveBlog(blogId) {
+    AppState.activeBlogId = blogId
     try {
       const res = await api.get('/blogs/' + blogId)
       AppState.activeBlog = res.data
