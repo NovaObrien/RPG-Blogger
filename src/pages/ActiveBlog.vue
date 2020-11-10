@@ -5,15 +5,20 @@
         <CreateBlog class="mt-5" />
         <!-- <EditBlog class="mt-5" /> -->
         <CreateComment class="mt-5" />
+        <button class="btn btn-dark mt-5">
+          <i
+            class="fas fa-skull-crossbones"
+            @click="deleteActiveBlog(blog._id)"
+          >
+            Delete</i
+          >
+        </button>
       </div>
       <div class="col-7 overflow-auto" id="post">
         <div
           class="activeBlog d-flex flex-column align-items-center"
           v-if="blog.title"
         >
-          <button class="btn btn-dark close">
-            <i class="ra ra-sword ra-lg"></i>
-          </button>
           <h2>{{ blog.title }}</h2>
           <h4>{{ blog.body }}</h4>
           <!-- <h6>{{ blog.imgUrl }}</h6> -->
@@ -57,10 +62,11 @@ export default {
     })
     return {
       blog: computed(() => AppState.activeBlog),
-      comments: computed(() => AppState.activeBlogComments)
-      // removeBlog() {
-      //   blogService.removeCar(route.params.blogId)
-      // }
+      comments: computed(() => AppState.activeBlogComments),
+      deleteActiveBlog(blogId) {
+        // route.push({ name: 'Home' })
+        blogService.removeActiveBlog(blogId)
+      }
     }
   }
 }

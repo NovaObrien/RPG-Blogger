@@ -7,8 +7,8 @@
       data-toggle="modal"
       data-target="#exampleModalLong"
     >
-      Post
       <i class="fas fa-scroll"></i>
+      Post
     </button>
 
     <!-- Modal -->

@@ -28,5 +28,13 @@ class BlogService {
       console.error(error)
     }
   }
+
+  async removeActiveBlog(blogId) {
+    try {
+      await api.delete('/blogs/' + blogId)
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
 export const blogService = new BlogService()

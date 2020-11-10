@@ -7,8 +7,8 @@
       data-toggle="modal"
       data-target="#createModal"
     >
-      Reply
       <i class="fas fa-scroll"></i>
+      Reply
     </button>
 
     <!-- Modal -->
