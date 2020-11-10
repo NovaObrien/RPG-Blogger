@@ -1,11 +1,11 @@
 <template>
-  <div class="create-blog">
+  <div class="create-comment">
     <!-- Button trigger modal -->
     <button
       type="button"
       class="btn btn-dark"
       data-toggle="modal"
-      data-target="#exampleModalLong"
+      data-target="#createModal"
     >
       Reply
       <i class="fas fa-scroll"></i>
@@ -14,7 +14,7 @@
     <!-- Modal -->
     <div
       class="modal fade"
-      id="exampleModalLong"
+      id="createModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLongTitle"
@@ -22,7 +22,7 @@
     >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <form class="form-group" @submit.prevent="createComment">
+          <form class="form-group" @submit.prevent="createComment(blog._id)">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLongTitle">
                 Create a Comment...
@@ -78,9 +78,11 @@ export default {
     })
     return {
       state,
+      blog: computed(() => AppState.activeBlog),
       comments: computed(() => AppState.activeBlogComments),
-      createComment() {
-        commentService.createComment(state.newComment)
+      createComment(blogId) {
+        state.newComment.blog = blogId
+        commentService.createComment(state.newComment, blogId)
       }
     }
   },

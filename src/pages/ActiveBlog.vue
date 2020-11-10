@@ -11,6 +11,9 @@
           class="activeBlog d-flex flex-column align-items-center"
           v-if="blog.title"
         >
+          <button class="btn btn-dark close">
+            <i class="ra ra-sword ra-lg"></i>
+          </button>
           <h2>{{ blog.title }}</h2>
           <h4>{{ blog.body }}</h4>
           <!-- <h6>{{ blog.imgUrl }}</h6> -->

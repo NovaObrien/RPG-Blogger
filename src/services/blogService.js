@@ -21,6 +21,7 @@ class BlogService {
 
   async getActiveBlog(blogId) {
     try {
+      console.log(blogId)
       const res = await api.get('/blogs/' + blogId)
       AppState.activeBlog = res.data
     } catch (error) {
