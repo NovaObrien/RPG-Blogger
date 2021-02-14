@@ -11,7 +11,8 @@ const routes = [
   {
     path: '/blog',
     name: 'Home',
-    component: Home
+    component: Home,
+    beforeEnter: Auth0Provider.authGuard
   },
   {
     path: '/blog/:blogId',
