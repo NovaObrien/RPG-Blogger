@@ -1,7 +1,11 @@
 <template>
-  <div class="Blog p-3">
-    <h3 @click="setActiveBlog">{{ blog.title }}</h3>
-    <h5>User: {{ blog.creatorEmail }}</h5>
+  <div class="Blog p-1 bg-gray my-3">
+    <h3 @click="setActiveBlog">
+      {{ blog.title }}
+    </h3>
+    <h5 class="d-flex justify-content-end bg-gray">
+      User: {{ blog.creatorEmail }}
+    </h5>
   </div>
 </template>
 
@@ -28,5 +32,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.bg-gray{
+  background-color: rgba(128, 128, 128, 0.301);
+}
 </style>
