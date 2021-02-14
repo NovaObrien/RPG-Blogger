@@ -1,6 +1,6 @@
 module.exports = {
   // NOTE to host on github publicPath: '/YOUR-GITHUB-REPOSITORY-NAME/',
-  publicPath: 'https://github.com/NovaObrien',
+  publicPath: '/RPG-Blogger/',
   outputDir: 'docs',
   productionSourceMap: false
 }
