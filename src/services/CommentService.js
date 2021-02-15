@@ -7,7 +7,7 @@ class CommentService {
       const res = await api.get('/blogs/' + blogId + '/comments')
       AppState.activeBlogComments = res.data
     } catch (error) {
-      console.error(error)
+      // console.error(error)
     }
   }
 
@@ -17,7 +17,7 @@ class CommentService {
       const blogId = commentData.blog
       this.getComments(blogId)
     } catch (error) {
-      console.error(error)
+      // console.error(error)
     }
   }
 
@@ -28,7 +28,7 @@ class CommentService {
       await api.delete('/comments/' + commentId)
       this.getComments(blogId)
     } catch (error) {
-      console.error(error)
+      // console.error(error)
     }
   }
 }

@@ -7,10 +7,10 @@ class ProfileService {
       const res = await api.get('/profile')
       AppState.profile = res.data
       // eslint-disable-next-line no-console
-      console.log(res.data)
+      // console.log(res.data)
     } catch (err) {
       // eslint-disable-next-line no-console
-      console.error(err)
+      // console.error(err)
     }
   }
 }

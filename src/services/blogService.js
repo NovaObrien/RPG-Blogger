@@ -7,7 +7,7 @@ class BlogService {
       AppState.blogs = res.data
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.error(error)
+      // console.error(error)
     }
   }
 
@@ -15,17 +15,17 @@ class BlogService {
     try {
       await api.post('/blogs', blogData)
     } catch (error) {
-      console.error(error)
+      // console.error(error)
     }
   }
 
   async getActiveBlog(blogId) {
     try {
-      console.log(blogId)
+      // console.log(blogId)
       const res = await api.get('/blogs/' + blogId)
       AppState.activeBlog = res.data
     } catch (error) {
-      console.error(error)
+      // console.error(error)
     }
   }
 
@@ -33,7 +33,7 @@ class BlogService {
     try {
       await api.delete('/blogs/' + blogId)
     } catch (error) {
-      console.error(error)
+      // console.error(error)
     }
   }
 }
