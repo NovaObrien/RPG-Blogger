@@ -10,8 +10,7 @@
             class="fas fa-skull-crossbones"
             @click="deleteActiveBlog(blog._id)"
           >
-            Delete</i
-          >
+            Delete</i>
         </button>
       </div>
       <div class="col-7 overflow-auto" id="post">
