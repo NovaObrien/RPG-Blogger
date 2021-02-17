@@ -5,6 +5,7 @@ import Home from '../pages/Home.vue'
 import Profile from '../pages/Profile.vue'
 // @ts-ignore
 import ActiveBlog from '../pages/ActiveBlog.vue'
+import TestPage from '../pages/TestPage.vue'
 import { Auth0Provider } from '@bcwdev/auth0provider-client'
 
 const routes = [
