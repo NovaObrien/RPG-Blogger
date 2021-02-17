@@ -9,6 +9,11 @@ import { Auth0Provider } from '@bcwdev/auth0provider-client'
 
 const routes = [
   {
+    path: '/',
+    name: 'Test',
+    component: TestPage
+  },
+  {
     path: '/blog',
     name: 'Home',
     component: Home,
